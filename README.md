@@ -3,15 +3,15 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/smtp.svg)
 [![Chat With Us](https://img.shields.io/gitter/room/appwrite/community.svg)](https://gitter.im/appwrite/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
-SMTP server docker container for sending emails. This container is based on the namshi docker image with Appwrite specific configuration settings, for a fresh installation of namshi SMTP image use the [docker original image](https://hub.docker.com/r/namshi/smtp).
+SMTP server docker container is used for sending emails. This container is based on the namshi docker image with Appwrite specific configuration settings. For a fresh installation of namshi SMTP image use the [docker original image](https://hub.docker.com/r/namshi/smtp).
 
 ## Getting Started
 
-These instructions will cover usage information to help your run Appwrite's SMTP docker container.
+These instructions will cover usage information to help you run the Appwrite's SMTP docker container.
 
 ### Prerequisities
 
-In order to run this container you'll need docker installed.
+In order to run this container you'll need docker installed on the system.
 
 * [Windows](https://docs.docker.com/windows/started)
 * [OS X](https://docs.docker.com/mac/started/)
@@ -25,7 +25,7 @@ docker run appwrite/smtp
 
 ### Versioning
 
-This image versioning is following Appwrite server versioning. This means that if you use Appwrite server version 1.1.* , also use version 1.1.* of Appwrite SMTP docker image.
+This image versioning is following Appwrite server versioning. This means that if you use Appwrite server version 1.1.* , you also use version 1.1.* of Appwrite SMTP docker image.
 
 ### Environment Variables
 
