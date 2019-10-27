@@ -1,7 +1,7 @@
 # Docker SMTP
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/smtp.svg)
-[![Chat With Us](https://img.shields.io/gitter/room/appwrite/community.svg)](https://gitter.im/appwrite/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
 
 SMTP server docker container for sending emails. This container is based on the namshi docker image with Appwrite specific configuration settings, for a fresh installation of namshi SMTP image use the [docker original image](https://hub.docker.com/r/namshi/smtp).
 
