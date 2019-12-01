@@ -34,7 +34,7 @@ This container supports all environment variables supplied by the original namsh
 ## Find Us
 
 * [GitHub](https://github.com/appwrite)
-* [Gitter](https://gitter.im/utopia-php/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+* [Discord](https://discord.gg/GSeTUeA)
 * [Twitter](https://twitter.com/appwrite_io)
 
 ## Maintainers
