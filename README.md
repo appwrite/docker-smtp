@@ -31,6 +31,16 @@ This image versioning is following Appwrite server versioning. This means that i
 
 This container supports all environment variables supplied by the original namshi SMTP Docker image.
 
+## Build
+```bash
+docker build -t appwrite/smtp:1.1.0 .
+```
+
+## Push
+```bash
+docker push appwrite/smtp:1.1.0
+```
+
 ## Find Us
 
 * [GitHub](https://github.com/appwrite)
