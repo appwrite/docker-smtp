@@ -79,6 +79,6 @@ if [ -f /etc/exim/_docker_additional_macros ]; then
 	cat /etc/exim/_docker_additional_macros >> /etc/exim/exim.conf.localmacros
 fi
 
-/bin/set-exim-update-conf "${opts[@]}"
+# /bin/set-exim-update-conf "${opts[@]}"
 
 exec "$@"
