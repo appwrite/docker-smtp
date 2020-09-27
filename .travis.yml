@@ -1,0 +1,26 @@
+language: php
+
+php:
+  - '7.4'
+
+notifications:
+  email:
+  - team@appwrite.io
+  
+services:
+- docker
+
+install:
+- docker-compose up -d
+- sleep 10
+
+script:
+- docker ps
+- >
+  if : >/dev/tcp/localhost/25; then
+    echo 'Internet available.'
+    exit 0
+  else
+    echo 'Offline.'
+    exit 1
+  fi

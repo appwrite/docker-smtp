@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  smtp:
+    container_name: smtp
+    build:
+      context: .
+    restart: unless-stopped
+    networks:
+      - smtp
+    ports:
+      - "25:25"
+    environment:
+      - MAILNAME=appwrite
+      - RELAY_NETWORKS=:192.168.0.0/24:10.0.0.0/16
+
+networks:
+  smtp:
