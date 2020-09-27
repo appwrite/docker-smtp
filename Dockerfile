@@ -2,7 +2,7 @@ FROM alpine:3.12
 
 LABEL maintainer="team@appwrite.io"
 
-RUN apk add --no-cache exim iproute2
+RUN apk add --no-cache bash exim iproute2
 
 COPY entrypoint.sh /bin/
 COPY set-exim-update-conf /bin/
