@@ -13,6 +13,7 @@ services:
 install:
 - docker-compose up -d
 - sleep 10
+- docker-compose logs smtp
 
 script:
 - docker ps
