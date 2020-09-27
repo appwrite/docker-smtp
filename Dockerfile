@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.12
 
 LABEL maintainer="team@appwrite.io"
 
@@ -15,4 +15,3 @@ EXPOSE 25
 ENTRYPOINT ["/bin/entrypoint.sh"]
 
 CMD ["exim", "-bd", "-q15m", "-v"]
- 
