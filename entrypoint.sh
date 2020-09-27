@@ -2,25 +2,25 @@
 set -e
 
 # Initialize localmacros as an empty file
-echo -n "" > /etc/exim4/exim4.conf.localmacros
+echo -n "" > /etc/exim/exim.conf.localmacros
 
 if [ "$MAILNAME" ]; then
-	echo "MAIN_HARDCODE_PRIMARY_HOSTNAME = $MAILNAME" > /etc/exim4/exim4.conf.localmacros
+	echo "MAIN_HARDCODE_PRIMARY_HOSTNAME = $MAILNAME" > /etc/exim/exim.conf.localmacros
 	echo $MAILNAME > /etc/mailname
 fi
 
 if [ "$KEY_PATH" -a "$CERTIFICATE_PATH" ]; then
 	if [ "$MAILNAME" ]; then
-	  echo "MAIN_TLS_ENABLE = yes" >>  /etc/exim4/exim4.conf.localmacros
+	  echo "MAIN_TLS_ENABLE = yes" >>  /etc/exim/exim.conf.localmacros
 	else
-	  echo "MAIN_TLS_ENABLE = yes" >>  /etc/exim4/exim4.conf.localmacros
+	  echo "MAIN_TLS_ENABLE = yes" >>  /etc/exim/exim.conf.localmacros
 	fi
-	cp $KEY_PATH /etc/exim4/exim.key
-	cp $CERTIFICATE_PATH /etc/exim4/exim.crt
-	chgrp Debian-exim /etc/exim4/exim.key
-	chgrp Debian-exim /etc/exim4/exim.crt
-	chmod 640 /etc/exim4/exim.key
-	chmod 640 /etc/exim4/exim.crt
+	cp $KEY_PATH /etc/exim/exim.key
+	cp $CERTIFICATE_PATH /etc/exim/exim.crt
+	chgrp Debian-exim /etc/exim/exim.key
+	chgrp Debian-exim /etc/exim/exim.crt
+	chmod 640 /etc/exim/exim.key
+	chmod 640 /etc/exim/exim.crt
 fi
 
 opts=(
@@ -30,7 +30,7 @@ opts=(
 )
 
 if [ "$DISABLE_IPV6" ]; then 
-        echo 'disable_ipv6=true' >> /etc/exim4/exim4.conf.localmacros
+        echo 'disable_ipv6=true' >> /etc/exim/exim.conf.localmacros
 fi
 
 if [ "$GMAIL_USER" -a "$GMAIL_PASSWORD" ]; then
@@ -39,14 +39,14 @@ if [ "$GMAIL_USER" -a "$GMAIL_PASSWORD" ]; then
 		dc_smarthost 'smtp.gmail.com::587'
 		dc_relay_domains "${RELAY_DOMAINS}"
 	)
-	echo "*.google.com:$GMAIL_USER:$GMAIL_PASSWORD" > /etc/exim4/passwd.client
+	echo "*.google.com:$GMAIL_USER:$GMAIL_PASSWORD" > /etc/exim/passwd.client
 elif [ "$SES_USER" -a "$SES_PASSWORD" ]; then
 	opts+=(
 		dc_eximconfig_configtype 'smarthost'
 		dc_smarthost "email-smtp.${SES_REGION:=us-east-1}.amazonaws.com::${SES_PORT:=587}"
 		dc_relay_domains "${RELAY_DOMAINS}"
 	)
-	echo "*.amazonaws.com:$SES_USER:$SES_PASSWORD" > /etc/exim4/passwd.client
+	echo "*.amazonaws.com:$SES_USER:$SES_PASSWORD" > /etc/exim/passwd.client
 # Allow to specify an arbitrary smarthost.
 # Parameters: SMARTHOST_USER, SMARTHOST_PASSWORD: authentication parameters
 # SMARTHOST_ALIASES: list of aliases to puth auth data for (semicolon separated)
@@ -57,10 +57,10 @@ elif [ "$SMARTHOST_ADDRESS" ] ; then
 		dc_smarthost "${SMARTHOST_ADDRESS}::${SMARTHOST_PORT-25}"
 		dc_relay_domains "${RELAY_DOMAINS}"
 	)
-	rm -f /etc/exim4/passwd.client
+	rm -f /etc/exim/passwd.client
 	if [ "$SMARTHOST_ALIASES" -a "$SMARTHOST_USER" -a "$SMARTHOST_PASSWORD" ] ; then
 		echo "$SMARTHOST_ALIASES;" | while read -d ";" alias; do
-			echo "${alias}:$SMARTHOST_USER:$SMARTHOST_PASSWORD" >> /etc/exim4/passwd.client
+			echo "${alias}:$SMARTHOST_USER:$SMARTHOST_PASSWORD" >> /etc/exim/passwd.client
 		done
 	fi
 elif [ "$RELAY_DOMAINS" ]; then
@@ -75,10 +75,10 @@ else
 fi
 
 # allow to add additional macros by bind-mounting a file
-if [ -f /etc/exim4/_docker_additional_macros ]; then
-	cat /etc/exim4/_docker_additional_macros >> /etc/exim4/exim4.conf.localmacros
+if [ -f /etc/exim/_docker_additional_macros ]; then
+	cat /etc/exim/_docker_additional_macros >> /etc/exim/exim.conf.localmacros
 fi
 
-/bin/set-exim4-update-conf "${opts[@]}"
+/bin/set-exim-update-conf "${opts[@]}"
 
 exec "$@"

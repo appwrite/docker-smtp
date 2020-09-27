@@ -5,10 +5,10 @@ LABEL maintainer="team@appwrite.io"
 RUN apk add --no-cache exim iproute2
 
 COPY entrypoint.sh /bin/
-COPY set-exim4-update-conf /bin/
+COPY set-exim-update-conf /bin/
 
 RUN chmod a+x /bin/entrypoint.sh && \
-    chmod a+x /bin/set-exim4-update-conf
+    chmod a+x /bin/set-exim-update-conf
 
 EXPOSE 25
 
