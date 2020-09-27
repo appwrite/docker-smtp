@@ -81,8 +81,10 @@ fi
 
 # /bin/set-exim-update-conf "${opts[@]}"
 
-echo "debug"
+echo "debug1"
 cat /etc/exim/exim.conf.localmacros
+echo "debug2"
 cat /etc/exim/exim.conf
+echo "debug3"
 
 exec "$@"
