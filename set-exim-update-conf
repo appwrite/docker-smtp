@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+ls /etc/exim
+
 conf='/etc/exim/update-exim.conf'
 
 sedExpr=''
