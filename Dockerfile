@@ -15,3 +15,4 @@ EXPOSE 25
 ENTRYPOINT ["/bin/entrypoint.sh"]
 
 CMD ["exim", "-bd", "-q15m", "-v"]
+  
