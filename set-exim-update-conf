@@ -3,7 +3,7 @@ set -e
 
 ls /etc/exim
 
-conf='/etc/exim/update-exim.conf'
+conf='/etc/exim/exim.conf'
 
 sedExpr=''
 while [ $# -gt 0 ]; do
