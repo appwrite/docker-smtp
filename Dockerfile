@@ -1,12 +1,8 @@
-FROM ubuntu:18.04
+FROM alpine:3.12
 
 LABEL maintainer="team@appwrite.io"
 
-RUN apt-get update && \
-    apt-get install -y iproute2 exim4-daemon-light && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    find /var/log -type f | while read f; do echo -ne '' > $f; done;
+RUN apk add --no-cache iproute2 exim
 
 COPY entrypoint.sh /bin/
 COPY set-exim4-update-conf /bin/
@@ -19,3 +15,4 @@ EXPOSE 25
 ENTRYPOINT ["/bin/entrypoint.sh"]
 
 CMD ["exim", "-bd", "-q15m", "-v"]
+  
