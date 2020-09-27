@@ -2,7 +2,7 @@ FROM alpine:3.12
 
 LABEL maintainer="team@appwrite.io"
 
-RUN apk add --no-cache iproute2 exim
+RUN apk add --no-cache exim iproute2
 
 COPY entrypoint.sh /bin/
 COPY set-exim4-update-conf /bin/
@@ -15,4 +15,3 @@ EXPOSE 25
 ENTRYPOINT ["/bin/entrypoint.sh"]
 
 CMD ["exim", "-bd", "-q15m", "-v"]
-  
