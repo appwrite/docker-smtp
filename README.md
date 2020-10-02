@@ -13,9 +13,11 @@ These instructions will cover usage information to help you run the Appwrite's S
 
 In order to run this container you'll need docker installed on the system.
 
-* [Windows](https://docs.docker.com/windows/started)
-* [OS X](https://docs.docker.com/mac/started/)
-* [Linux](https://docs.docker.com/linux/started/)
+* [Windows](https://docs.docker.com/docker-for-windows/install/)
+* [OS X](https://docs.docker.com/docker-for-mac/install/)
+* [Linux](https://docs.docker.com/engine/install/)
+
+Refer [docs](https://docs.docker.com/) for general documentation and guides for using docker.
 
 ### Usage
 
