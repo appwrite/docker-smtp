@@ -1,5 +1,6 @@
 # Docker SMTP
 
+[![Build Status](https://travis-ci.com/appwrite/docker-smtp.svg?branch=master)](https://travis-ci.com/appwrite/docker-smtp)
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/smtp.svg)
 [![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
 
