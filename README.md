@@ -26,10 +26,6 @@ Refer [docs](https://docs.docker.com/) for general documentation and guides for 
 docker run appwrite/smtp
 ```
 
-### Versioning
-
-This image versioning is following Appwrite server versioning. This means that if you use Appwrite server version 1.1.* , you also use version 1.1.* of Appwrite SMTP docker image.
-
 ### Environment Variables
 
 This container supports all environment variables supplied by the original namshi SMTP Docker image.
@@ -47,15 +43,8 @@ docker push appwrite/smtp:1.1.0
 ## Find Us
 
 * [GitHub](https://github.com/appwrite)
-* [Discord](https://discord.gg/GSeTUeA)
+* [Discord](https://appwrite.io/discord)
 * [Twitter](https://twitter.com/appwrite_io)
-
-## Maintainers
-
-**Eldad Fux**
-
-+ [https://twitter.com/eldadfux](https://twitter.com/eldadfux)
-+ [https://github.com/eldadfux](https://github.com/eldadfux)
 
 ## Copyright and license
 
