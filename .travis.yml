@@ -7,8 +7,8 @@ language: minimal
 
 arch:
   - amd64
-  # - arm64
-  # - s390x
+  - arm64
+  - s390x
 
 os: linux
 
@@ -47,3 +47,4 @@ deploy:
     script: docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x -t appwrite/smtp:$TRAVIS_TAG ./ --push
     on:
       tags: true
+      condition: $TRAVIS_CPU_ARCH = amd64
