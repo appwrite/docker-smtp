@@ -1,7 +1,7 @@
 # Docker SMTP
 
 [![Discord](https://img.shields.io/discord/564160730845151244?label=discord&style=flat-square)](https://appwrite.io/discord)
-[![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/docker-smtp?color=f02e65&style=flat-square)](https://hub.docker.com/r/appwrite/requestcatcher)
+[![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/smtp?color=f02e65&style=flat-square)](https://hub.docker.com/r/appwrite/smtp)
 [![Build Status](https://img.shields.io/travis/com/appwrite/docker-smtp?style=flat-square)](https://travis-ci.com/appwrite/docker-requestcatcher)
 [![Twitter Account](https://img.shields.io/twitter/follow/appwrite?color=00acee&label=twitter&style=flat-square)](https://twitter.com/appwrite)
 [![Follow Appwrite on StackShare](https://img.shields.io/badge/follow%20on-stackshare-blue?style=flat-square)](https://stackshare.io/appwrite)
